@@ -185,3 +185,55 @@ DonjonGuardian BouftouRoyal = new DonjonGuardian("Bouftou Royal", "Amulette");
         System.out.println(e);
       }
 
+
+GESTION DES FICHIERS :
+
+ Path f = Paths.get("pathtest.txt"); //Declaration de notre path
+      Path newF = Paths.get("brandNewFile.txt");
+      Path dir = Paths.get("myNewDir");
+      Path fileDestination = dir.resolve(newF); //Si on passe un autre argument on modifiera le nom final de destination
+
+      BufferedReader bfrRead = null;
+      BufferedWriter bfrWrite = null;
+      //StandardOpenOption mode = StandardOpenOption.TRUNCATE_EXISTING; // va overwrite le fichier existant
+      //StandardOpenOption mode = StandardOpenOption.CREATE_NEW; //va creer un fichier et renvoyer une erreur sil existe deja
+      StandardOpenOption mode = StandardOpenOption.APPEND; //va append au fichier
+      //StandardOpenOption mode = StandardOpenOption.DELETE_ON_CLOSE; //va supprimer le fichier a la fermeture
+
+      //encodage du fichier, par defaut est deja en UTF-8
+      Charset c = Charset.forName("UTF-8");
+
+      try{
+        //Files.exists(f) return boolean exists or not
+        //Files.isDirectory(f) return boolean is directory or not
+        //Files.isRegularFile(f) return boolean is file or not
+
+
+        //Files.move(newF, fileDestination); //peut lever une exception pour move
+        //Files.copy(newF, fileDestination); //peut lever une exception, pour copier et coller
+        //System.out.println(Files.size(fileSource)) nous donne la taille dun fichier en octet
+
+        //Files.delete(fileDestination); //peut lever une exception, pour delete 
+        //Files.deleteIfExists(fileDestination); //peut lever une exception, pour delete si existe
+
+        //Files.createFile(newF);
+        //Files.createDirectory(dir); // create new directory
+        bfrRead = Files.newBufferedReader(f); //ouverture d'un buffer qui va lire les donnes
+        //bfrRead.skip(2); //le pointeur va skip les deux premieres caracteres
+
+        System.out.println(bfrRead.readLine());
+        System.out.println(bfrRead.readLine()); // pointeur qui va lire la seconde ici
+        bfrRead.close(); //fermeture du buffer
+
+        bfrWrite = Files.newBufferedWriter(f, c/*pas obligé */, mode); //ouverture d'un buffer qui va ecrire des donnes
+        bfrWrite.newLine();
+        bfrWrite.write("Nouvel ajout !");
+        bfrWrite.newLine();
+        bfrWrite.write("Et encore un autre !");
+        bfrWrite.close();
+
+      } catch (IOException e){
+        System.out.println("IO Exception : " + e.getMessage());
+      }catch (Exception e){
+        System.out.println("Exception : " + e.getMessage());
+      }
