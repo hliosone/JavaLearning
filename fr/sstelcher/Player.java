@@ -18,8 +18,14 @@ public class Player {
         System.out.println("Player name : " + this.name);
     }
 
-    private static int nbPlayer = 0;
-    private String name;
-    private int pv;
-    private Item it;
+    public void displayTest(){
+        System.out.println("Now you're in class Player");
+    }
+
+    //protected permet l'accès aux variables pour les classes qui heritent de la classe
+    //reste private sinon
+    protected static int nbPlayer = 0;
+    protected String name;
+    protected int pv;
+    protected Item it;
 }

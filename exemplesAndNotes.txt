@@ -68,3 +68,84 @@ public class App {
 \f : nouvelle page
 \' \" (Protection)
    */
+
+      InputStreamReader isr = new InputStreamReader(System.in); //atends un flux à lire
+      BufferedReader br = new BufferedReader(isr); /*Va permettre de faire de la lecture de données
+      est thread safe (synchrone)
+      considere que toute saisie faite est une chaine de caractere (String)
+      Buffer de 8192 caracteres
+      Méthodes : 
+      - read() : lire un caractere
+      - readLine() : lire une chaine, peut lever une exception
+      - skip(N) : ignore N caractères
+      */
+
+      Scanner sc = new Scanner(System.in); 
+      /* Prend direct un inputStream en parametre
+      plus lent et pas thread safe, est asynchrone
+      lecture de donnees + parsing (verifications, controles, etc)
+      Buffer de 1024 caracteres
+      Méthodes :
+      - nextLine()
+      - nextChar()
+      - nextInt()
+      etc ...
+      */
+      System.out.print("Comment t'appelle tu ? ");
+      String name = br.readLine();
+      System.out.println(name);
+
+      System.out.print("A quel niveau acceder ? ");
+      int gameLevel = sc.nextInt();
+      System.out.println(gameLevel);
+
+      Scanner sc = new Scanner(System.in);
+      try{
+        System.out.print("A quel niveau voulez-vous acceder ? : ");
+        int gameLevel = sc.nextInt();
+        System.out.println(gameLevel);
+      } catch(InputMismatchException e){
+        System.out.println("Le niveau n'existe pas !");
+        e.printStackTrace(); //nous affiche l'erreur en détails
+        //System.out.println("Erreur : " + e.getMessage()); Pareil que au dessus normalement
+        
+      } // on peut enchainer les catchs, on met les plus potentiels en premier
+      catch (Exception e){
+        System.out.println("Il y a eu un probleme dans le jeu, redémarrez");
+      } finally { //quoiquil arrive on continuera cette partie du programme
+        System.out.println("Ok fin");
+      }
+
+
+
+      HERITAGE :
+
+
+      //final veut dire que la classe sera non extendable
+public final class DonjonGuardian extends Player
+
+// Dans la classe mere
+//protected permet l'accès aux variables pour les classes qui heritent de la classe
+    //reste private sinon
+    protected static int nbPlayer = 0;
+    protected String name;
+
+public DonjonGuardian(String name, String _medal){
+super(name); //creer une instance avec le constructeur mere
+
+//super va permettre ici d'utiliser la methode de la classe parente si la meme existe dans notre classe
+public void displayTestS(){
+        super.displayTest();
+    }
+
+//on peut aussi mettre super sur une methode si on veut quelle ne soit dupliquee et redefinie sur une classe enfant
+// pareil sur un attribut de classe
+//pareil sur un attribut dans une fonction
+//final peut etre consideree comme une constante aussi
+exemple sur la classe mere :
+
+public final void move( blbla ){
+    // si une methode move existe dans notre classe enfant elle ne pourra pas etre utilisee 
+}
+
+
