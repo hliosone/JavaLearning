@@ -116,6 +116,12 @@ public class App {
         System.out.println("Ok fin");
       }
 
+      on peut lever une exception comme en C++ : ne pas oublier de rajouter throws Exception a la declaration de la
+      classe pour indiquer que cela peut lever une exception
+      ex : throw new Exception("Valeur incorrecte")
+
+      On peut même se creer une classe PlayerException qui extends la classe Exception par exemple
+
 
 
       HERITAGE :
