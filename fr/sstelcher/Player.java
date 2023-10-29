@@ -7,7 +7,6 @@ public class Player extends Gamer implements SuperSaiyan {
          name = _name;
          pv = 100;
          Item it = new Item();
-         SuperSaiyan.getFlySpeed();
          ++nbPlayer;
     } else {
         System.out.println("Not possible");
@@ -29,6 +28,10 @@ public class Player extends Gamer implements SuperSaiyan {
 
     public void voler(int hauteur){
         System.out.println("Le joueur vole à cette hauteur : " + hauteur);
+    }
+
+    public void voler(){
+        System.out.println("Le joueur vole bien haut");
     }
 
 

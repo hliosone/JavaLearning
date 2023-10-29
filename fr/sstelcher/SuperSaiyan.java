@@ -12,7 +12,7 @@ interface SuperSaiyan{ //peut extendre une autre interface
     public final int flySpeed = 20;
     //on peut faire une static pour permettre l'appel depuis partout
     public static void getFlySpeed(){
-        System.out.println("Voila la flyspeed : " + flySpeed);
+        System.out.println("Voila la flyspeed : " + flySpeed); 
     }
 
     //permet de creer une methode par defaut dans l'interface

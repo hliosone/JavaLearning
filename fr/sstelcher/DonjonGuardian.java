@@ -1,7 +1,7 @@
 package fr.sstelcher;
 
 //final veut dire que la classe sera non extendable
-public final class DonjonGuardian extends Player {
+public final class DonjonGuardian extends Player implements SuperSaiyan {
 
     public DonjonGuardian(String name, String _medal){
         super(name); //creer une instance avec le constructeur mere
@@ -23,5 +23,8 @@ public final class DonjonGuardian extends Player {
         super.displayTest();
     }
 
+    public void voler(){
+        System.out.println("Le gardien vole bien haut");
+    }
     private String medal;
 }

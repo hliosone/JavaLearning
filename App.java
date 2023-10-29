@@ -20,5 +20,11 @@ public class App {
       }
       Player One = new Player("Stan");
       One.displayName();
-  }
+
+      Gamer[] gamersList = {new Player("Stan"), new Player("King"), new DonjonGuardian("Boufton", "Amulette Boufton")};
+
+      for(Gamer e : gamersList){
+        e.voler();
+      }
+    }
 }
