@@ -158,5 +158,30 @@ public final void move( blbla ){
 abstract public class // permet de creer une classe abstraite
 sert de sorte de reference
 
+Abstract polymorphism enum :
 
+DonjonGuardian BouftouRoyal = new DonjonGuardian("Bouftou Royal", "Amulette");
+  
+      //permet de verifier si un objet est une instance d'une classe precisee
+      if(BouftouRoyal instanceof DonjonGuardian){   System.out.println("C'est bien un gardien de donjon !");
+      }
+      Player One = new Player("Stan");
+      One.displayName();
+
+      Gamer[] gamersList = {new Player("Stan"), new Player("King"), new DonjonGuardian("Boufton", "Amulette Boufton")};
+
+      for(Gamer e : gamersList){
+        e.voler();
+      }
+
+      EquipmentColor favColor = EquipmentColor.RED;
+
+      System.out.println(favColor.name()); //nom de l'element
+      System.out.println(favColor.ordinal()); // indice de l'element dans l'enum (l'ordre)
+      System.out.println(favColor.toString()); // methode
+
+      //Boucler sur l'enumeration
+      for(EquipmentColor e : EquipmentColor.values()){
+        System.out.println(e);
+      }
 
