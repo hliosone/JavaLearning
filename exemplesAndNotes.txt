@@ -155,3 +155,8 @@ public final void move( blbla ){
 }
 
 
+abstract public class // permet de creer une classe abstraite
+sert de sorte de reference
+
+
+

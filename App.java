@@ -18,7 +18,6 @@ public class App {
       //permet de verifier si un objet est une instance d'une classe precisee
       if(BouftouRoyal instanceof DonjonGuardian){   System.out.println("C'est bien un gardien de donjon !");
       }
-
       Player One = new Player("Stan");
       One.displayName();
   }
