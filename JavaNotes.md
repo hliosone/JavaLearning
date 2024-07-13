@@ -115,6 +115,8 @@ public class App {
         remove()
         size()
 
+        LinkedList : addFirst(), addLast(), removeFirst(), .., getFirst(), ...
+
         // Enumération pour les couleurs d'équipement
         EquipmentColor favColor = EquipmentColor.RED;
 
