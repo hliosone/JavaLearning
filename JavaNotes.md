@@ -106,6 +106,15 @@ public class App {
             // ...
         }
 
+        //Collections methods
+        add()
+        addAll()
+        clear()
+        contains()
+        isEmpty()
+        remove()
+        size()
+
         // Enumération pour les couleurs d'équipement
         EquipmentColor favColor = EquipmentColor.RED;
 
